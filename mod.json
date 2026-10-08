@@ -1,0 +1,65 @@
+{
+	"geode": "5.7.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "verycoolprofile.wave-gap-calculator",
+	"name": "Wave Gap Calculator",
+	"version": "v1.0.0",
+	"developer": "verycoolprofile",
+	"description": "Calculates exact wave gap limits for any TPS and places gap structures in the level editor.",
+	"logo": "logo.png",
+	"resources": {
+		"sprites": [
+			"resources/icon.png"
+		]
+	},
+	"settings": {
+		"default-tps": {
+			"name": "Default TPS / FPS",
+			"description": "Default TPS value loaded when opening the Wave Gap menu in editor.",
+			"type": "float",
+			"default": 240.0,
+			"min": 60.0,
+			"max": 3840.0,
+			"step": 60.0
+		},
+		"default-mode": {
+			"name": "Default Gap Mode",
+			"description": "Select default calculation mode when popup opens.",
+			"type": "string",
+			"default": "smallest",
+			"one-of": [
+				"smallest",
+				"recommended"
+			]
+		},
+		"default-size": {
+			"name": "Default Wave Size",
+			"description": "Select default wave size.",
+			"type": "string",
+			"default": "big",
+			"one-of": [
+				"big",
+				"mini"
+			]
+		},
+		"auto-select-placed": {
+			"name": "Select Placed Blocks",
+			"description": "Automatically selects newly generated gap blocks in the editor after placement.",
+			"type": "bool",
+			"default": true
+		}
+	},
+	"tags": [
+		"editor",
+		"utility",
+		"gameplay"
+	],
+	"links": {
+		"source": "https://github.com/verycoolprofile/wave-gap-calculator"
+	}
+}
