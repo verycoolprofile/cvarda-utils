@@ -70,6 +70,7 @@ protected:
         bg->setPosition(winSize / 2.f);
         m_mainLayer->addChild(bg);
 
+        // --- Кнопка закрытия ---
         auto closeBtn = CCMenuItemSpriteExtra::create(
             CCSprite::createWithSpriteFrameName("GJ_closeBtn_001.png"),
             this,
@@ -78,6 +79,7 @@ protected:
         auto closeMenu = CCMenu::create();
         closeMenu->addChild(closeBtn);
         closeMenu->setPosition({ winSize.width / 2.f - width / 2.f + 14.f, winSize.height / 2.f + height / 2.f - 14.f });
+        closeMenu->setTouchPriority(-501); // Фикс кликабельности на Android
         m_mainLayer->addChild(closeMenu);
 
         auto title = CCLabelBMFont::create("Wave Gap Calculator", "goldFont.fnt");
@@ -152,6 +154,7 @@ protected:
         optionsMenu->addChild(m_recBtn);
 
         optionsMenu->alignItemsHorizontallyWithPadding(6.f);
+        optionsMenu->setTouchPriority(-501); // Фикс кликабельности на Android
         m_mainLayer->addChild(optionsMenu);
 
         // --- 3. Ряд скоростей ---
@@ -169,6 +172,7 @@ protected:
             speedMenu->addChild(btn);
         }
         speedMenu->alignItemsHorizontallyWithPadding(4.f);
+        speedMenu->setTouchPriority(-501); // Фикс кликабельности на Android
         m_mainLayer->addChild(speedMenu);
 
         // --- 4. Результат ---
@@ -187,6 +191,7 @@ protected:
             menu_selector(WaveGapPopup::onPlaceBlocks)
         );
         actionMenu->addChild(placeBtn);
+        actionMenu->setTouchPriority(-501); // Фикс кликабельности на Android
         m_mainLayer->addChild(actionMenu);
 
         updateVisuals();
